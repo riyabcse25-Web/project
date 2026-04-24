@@ -1,1 +1,103 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #d7ccc8, #efebe9);
+  padding: 20px;
+}
+
+/* Main Container */
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4e342e;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #5d4037;
+}
+
+/* Select & Input */
+select, input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+select:focus, input:focus {
+  border-color: #8d6e63;
+  outline: none;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #6d4c41;
+}
+
+/* Summary Box */
+.summary {
+  background: #f3e5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Summary Text */
+.summary h3 {
+  color: #4e342e;
+  margin-bottom: 10px;
+}
+
+#summaryText {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #3e2723;
+}
+
+/* Total Price */
+#total {
+  color: #bf360c;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Button (optional if you add later) */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #6d4c41;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #4e342e;
+}
