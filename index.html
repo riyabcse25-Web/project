@@ -1,53 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-    <title>Brew & Bean Café</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Brew & Bean Café</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+    }
+    .summary {
+      margin-top: 20px;
+      padding: 10px;
+      background: #eee;
+      border-radius: 5px;
+    }
+  </style>
 </head>
-
 <body>
 
-   
-    <div class="container">
+<div class="container">
+  <h2>Brew & Bean Café </h2>
+  <!-- Coffee Images Gallery -->
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1459023058943-07fcbe16d735?w=200&h=150&fit=crop" alt="Espresso">
+    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&h=150&fit=crop" alt="Cappuccino">
+    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=200&h=150&fit=crop" alt="Latte">
+    <img src="https://images.unsplash.com/photo-1514432324607-2e467f4af445?w=200&h=150&fit=crop" alt="Coffee Art">
+  </div>
+  <form id="orderForm">
 
-    
-        <h2>Brew & Bean Café </h2>
+    <!-- Coffee Type -->
+    <label>Select Coffee:</label><br>
+    <select id="coffee" onchange="updateOrder()">
+      <option value="100">Espresso (₹100)</option>
+      <option value="150">Cappuccino (₹150)</option>
+      <option value="180">Latte (₹180)</option>
+      <option value="120">Americano (₹120)</option>
+      <option value="200">Mocha (₹200)</option>
+      <option value="160">Macchiato (₹160)</option>
+      <option value="170">Flat White (₹170)</option>
+      <option value="190">Affogato (₹190)</option>
+      <option value="140">Cold Brew (₹140)</option>
+      <option value="220">Frappuccino (₹220)</option>
+    </select><br><br>
 
-  
-        <form id="orderForm">
+    <!-- Add-ons -->
+    <label>Add-ons:</label><br>
+    <input type="checkbox" value="20" onchange="updateOrder()"> Extra Sugar (₹20)<br>
+    <input type="checkbox" value="30" onchange="updateOrder()"> Whipped Cream (₹30)<br>
+    <input type="checkbox" value="40" onchange="updateOrder()"> Chocolate Syrup (₹40)<br>
+    <input type="checkbox" value="35" onchange="updateOrder()"> Vanilla Syrup (₹35)<br>
+    <input type="checkbox" value="50" onchange="updateOrder()"> Caramel Syrup (₹50)<br>
+    <input type="checkbox" value="25" onchange="updateOrder()"> Honey (₹25)<br>
+    <input type="checkbox" value="30" onchange="updateOrder()"> Cinnamon (₹30)<br>
+    <input type="checkbox" value="35" onchange="updateOrder()"> Hazelnut Syrup (₹35)<br>
+    <input type="checkbox" value="20" onchange="updateOrder()"> Almond Milk (₹20)<br>
+    <input type="checkbox" value="20" onchange="updateOrder()"> Oat Milk (₹20)<br>
+    <input type="checkbox" value="25" onchange="updateOrder()"> Coconut Milk (₹25)<br>
+    <input type="checkbox" value="40" onchange="updateOrder()"> Extra Espresso Shot (₹40)<br><br>
 
-           
-            <label for="coffee">Select Coffee:</label><br>
-            <select id="coffee">
-                <option value="100">Espresso (₹100)</option>
-                <option value="150">Cappuccino (₹150)</option>
-                <option value="180">Latte (₹180)</option>
-            </select><br><br>
+    <!-- Quantity -->
+    <label>Quantity:</label><br>
+    <input type="number" id="qty" value="1" min="1" onchange="updateOrder()"><br><br>
 
-           
-            <label>Add-ons:</label><br>
-            <input type="checkbox" value="20"> Extra Sugar (₹20)<br>
-            <input type="checkbox" value="30"> Whipped Cream (₹30)<br>
-            <input type="checkbox" value="40"> Chocolate Syrup (₹40)<br><br>
+  </form>
 
+  <!-- Order Summary -->
+  <div class="summary">
+    <h3>Order Summary</h3>
+    <p id="summaryText">Select your order</p>
+    <h3>Total: ₹<span id="total">0</span></h3>
+  </div>
+</div>
 
-            <label for="qty">Quantity:</label><br>
-            <input type="number" id="qty" value="1" min="1"><br><br>
+<script>
+function updateOrder() {
+  let coffee = document.getElementById("coffee");
+  let coffeePrice = parseInt(coffee.value);
+  let coffeeName = coffee.options[coffee.selectedIndex].text;
 
-        </form>
+  let checkboxes = document.querySelectorAll("input[type='checkbox']");
+  let addons = [];
+  let addonTotal = 0;
 
-   
-        <div class="summary">
-            <h3>Order Summary</h3>
-            <p id="summaryText">Your order details will appear here</p>
-            <h3>Total: ₹<span id="total">0</span></h3>
-        </div>
+  checkboxes.forEach(cb => {
+    if (cb.checked) {
+      addons.push(cb.parentElement.textContent.trim());
+      addonTotal += parseInt(cb.value);
+    }
+  });
 
-    </div>
+  let qty = parseInt(document.getElementById("qty").value);
 
-    <script src="script.js"></script>
+  let total = (coffeePrice + addonTotal) * qty;
+
+  document.getElementById("summaryText").innerHTML =
+    "Coffee: " + coffeeName + "<br>" +
+    "Add-ons: " + (addons.length ? addons.join(", ") : "None") + "<br>" +
+    "Quantity: " + qty;
+
+  document.getElementById("total").innerText = total;
+}
+</script>
 
 </body>
 </html>
