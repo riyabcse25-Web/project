@@ -1,26 +1,24 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #e6e6fa, #ffffff); /* Lavender gradient */
+  background: linear-gradient(135deg, #e6e6fa, #ffffff); 
   height: 100vh;
   width: 100vw;
 }
 
-/* Coffee Banner */
 .banner {
   width: 100%;
   height: 300px;
   margin-bottom: 30px;
   border-radius: 0 0 15px 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(150,123,182,0.4); /* Lavender shadow */
+  box-shadow: 0 8px 20px rgba(150,123,182,0.4); 
 }
 
 .banner img {
@@ -29,7 +27,6 @@ body {
   object-fit: cover;
 }
 
-/* Main Container */
 .container {
   width: 100vw;
   height: 100vh;
@@ -38,20 +35,18 @@ body {
   overflow-y: auto;
 }
 
-/* Content Wrapper */
 .content {
   max-width: 500px;
   margin: 0 auto;
 }
 
-/* Heading */
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #7b1fa2; /* Lavender tone */
+  color: #7b1fa2; 
 }
 
-/* Gallery */
+
 .gallery {
   display: flex;
   gap: 10px;
@@ -73,13 +68,12 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Labels */
+
 label {
   font-weight: bold;
   color: #6a1b9a;
 }
 
-/* Select & Input */
 select, input[type="number"] {
   width: 100%;
   padding: 8px;
@@ -94,13 +88,13 @@ select:focus, input:focus {
   outline: none;
 }
 
-/* Checkboxes */
+
 input[type="checkbox"] {
   margin-right: 8px;
   accent-color: #9575cd;
 }
 
-/* Summary Box */
+
 .summary {
   background: #f3e5f5;
   padding: 15px;
@@ -108,7 +102,7 @@ input[type="checkbox"] {
   margin-top: 20px;
 }
 
-/* Summary Text */
+
 .summary h3 {
   color: #7b1fa2;
   margin-bottom: 10px;
@@ -120,14 +114,13 @@ input[type="checkbox"] {
   color: #4a148c;
 }
 
-/* Total Price */
+
 #total {
   color: #8e24aa;
   font-size: 22px;
   font-weight: bold;
 }
 
-/* Button */
 button {
   width: 100%;
   padding: 10px;
