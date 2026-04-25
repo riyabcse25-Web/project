@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff9ecb, #ffffff);
+  background: linear-gradient(135deg, #e6e6fa, #ffffff); /* Lavender gradient */
   height: 100vh;
   width: 100vw;
 }
@@ -20,7 +20,7 @@ body {
   margin-bottom: 30px;
   border-radius: 0 0 15px 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(255,105,180,0.4);
+  box-shadow: 0 8px 20px rgba(150,123,182,0.4); /* Lavender shadow */
 }
 
 .banner img {
@@ -33,7 +33,7 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
-  background: #ffffff;
+  background: lavender #ffffff;
   padding: 25px;
   overflow-y: auto;
 }
@@ -48,7 +48,7 @@ body {
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #d63384;
+  color: #7b1fa2; /* Lavender tone */
 }
 
 /* Gallery */
@@ -65,7 +65,7 @@ h2 {
   height: 100px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(255,105,180,0.3);
+  box-shadow: 0 4px 8px rgba(150,123,182,0.3);
   transition: transform 0.3s ease;
 }
 
@@ -76,7 +76,7 @@ h2 {
 /* Labels */
 label {
   font-weight: bold;
-  color: #c2185b;
+  color: #6a1b9a;
 }
 
 /* Select & Input */
@@ -86,23 +86,23 @@ select, input[type="number"] {
   margin-top: 5px;
   margin-bottom: 15px;
   border-radius: 6px;
-  border: 1px solid #f8bbd0;
+  border: 1px solid #d1c4e9;
 }
 
 select:focus, input:focus {
-  border-color: #ec407a;
+  border-color: #9575cd;
   outline: none;
 }
 
 /* Checkboxes */
 input[type="checkbox"] {
   margin-right: 8px;
-  accent-color: #ec407a;
+  accent-color: #9575cd;
 }
 
 /* Summary Box */
 .summary {
-  background: #ffe4ec;
+  background: #f3e5f5;
   padding: 15px;
   border-radius: 8px;
   margin-top: 20px;
@@ -110,19 +110,19 @@ input[type="checkbox"] {
 
 /* Summary Text */
 .summary h3 {
-  color: #d63384;
+  color: #7b1fa2;
   margin-bottom: 10px;
 }
 
 #summaryText {
   font-size: 14px;
   margin-bottom: 10px;
-  color: #880e4f;
+  color: #4a148c;
 }
 
 /* Total Price */
 #total {
-  color: #e91e63;
+  color: #8e24aa;
   font-size: 22px;
   font-weight: bold;
 }
@@ -131,8 +131,8 @@ input[type="checkbox"] {
 button {
   width: 100%;
   padding: 10px;
-  background: #ec407a;
-  color: white;
+  background: #9575cd;
+  color: lavender;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -142,5 +142,5 @@ button {
 }
 
 button:hover {
-  background: #d81b60;
+  background: #7e57c2;
 }
