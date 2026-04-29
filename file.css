@@ -33,7 +33,7 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
-  background: lavender #ffffff;
+  background: lavender;
   padding: 25px;
   overflow-y: auto;
 }
