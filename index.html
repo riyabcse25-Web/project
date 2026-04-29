@@ -9,14 +9,13 @@
 <body>
 
 <div class="container">
-  <!-- Coffee Images Gallery -->
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&h=150&fit=crop" alt="Cappuccino">
     <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=200&h=150&fit=crop" alt="Latte">
   </div>
   <form id="orderForm">
 
-    <!-- Coffee Type -->
+
     <label>Select Coffee:</label><br>
     <select id="coffee" onchange="updateOrder()">
       <option value="100">Espresso (₹100)</option>
@@ -31,7 +30,7 @@
       <option value="220">Frappuccino (₹220)</option>
     </select><br><br>
 
-    <!-- Add-ons -->
+
     <label>Add-ons:</label><br>
     <input type="checkbox" value="20" onchange="updateOrder()"> Extra Sugar (₹20)<br>
     <input type="checkbox" value="30" onchange="updateOrder()"> Whipped Cream (₹30)<br>
@@ -46,13 +45,13 @@
     <input type="checkbox" value="25" onchange="updateOrder()"> Coconut Milk (₹25)<br>
     <input type="checkbox" value="40" onchange="updateOrder()"> Extra Espresso Shot (₹40)<br><br>
 
-    <!-- Quantity -->
+
     <label>Quantity:</label><br>
     <input type="number" id="qty" value="1" min="1" onchange="updateOrder()"><br><br>
 
   </form>
 
-  <!-- Order Summary -->
+
   <div class="summary">
     <h3>Order Summary</h3>
     <p id="summaryText">Select your order</p>
