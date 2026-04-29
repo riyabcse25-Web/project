@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Brew & Bean Café</title>
-  <link rel="stylesheet" href="file.css">
+    <title>Brew & Bean Café</title>
+
+  
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
@@ -88,6 +89,50 @@ function updateOrder() {
   document.getElementById("total").innerText = total;
 }
 </script>
+<section id="contact" class="mb-5">
+    <h2 class="mb-3">Contact Information</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+
+            <form class="bg-light-cream p-4 rounded shadow-sm">
+
+                <!-- Name -->
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <!-- Mobile -->
+                <div class="mb-3">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="tel" class="form-control" placeholder="Enter your mobile number">
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="3" placeholder="Write your message"></textarea>
+                </div>
+
+                <!-- Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn text-white" style="background:#6f4e37;">
+                        Submit
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
