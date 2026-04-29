@@ -1,40 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Coffee Order System</title>
-
-<style>
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #e6e6fa, #ffffff);
+  background: linear-gradient(135deg, #e6e6fa, #ffffff); /* Lavender gradient */
+  height: 100vh;
+  width: 100vw;
 }
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
+/* Coffee Banner */
+.banner {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(150,123,182,0.4); /* Lavender shadow */
 }
 
-/* Banner */
 .banner img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0 0 15px 15px;
+}
+
+/* Main Container */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: lavender #ffffff;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* Content Wrapper */
+.content {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* Heading */
 h2 {
   text-align: center;
-  margin: 15px 0;
-  color: #7b1fa2;
+  margin-bottom: 20px;
+  color: #7b1fa2; /* Lavender tone */
 }
 
 /* Gallery */
@@ -43,48 +57,74 @@ h2 {
   gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .gallery img {
-  width: 100px;
-  height: 80px;
+  width: 120px;
+  height: 100px;
   border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(150,123,182,0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Customer Box */
-.customer-box {
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #6a1b9a;
+}
+
+/* Select & Input */
+select, input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #d1c4e9;
+}
+
+select:focus, input:focus {
+  border-color: #9575cd;
+  outline: none;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #9575cd;
+}
+
+/* Summary Box */
+.summary {
   background: #f3e5f5;
   padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
-.customer-box h3 {
-  text-align: center;
+/* Summary Text */
+.summary h3 {
   color: #7b1fa2;
   margin-bottom: 10px;
 }
 
-input, textarea, select {
-  width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+#summaryText {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #4a148c;
 }
 
-/* Summary */
-.summary {
-  background: #f3e5f5;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
+/* Total Price */
 #total {
-  font-size: 20px;
+  color: #8e24aa;
+  font-size: 22px;
   font-weight: bold;
-  color: purple;
 }
 
 /* Button */
@@ -92,95 +132,15 @@ button {
   width: 100%;
   padding: 10px;
   background: #9575cd;
-  color: white;
+  color: lavender;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: 0.3s;
 }
-</style>
 
-</head>
-<body>
-
-<div class="banner">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-</div>
-
-<div class="container">
-
-<h2>Coffee Order</h2>
-
-<div class="gallery">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-  <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
-  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-</div>
-
-<!-- Customer Details -->
-<div class="customer-box">
-  <h3>Customer Details</h3>
-
-  <input type="text" id="name" placeholder="Enter Name">
-  <input type="number" id="contact" placeholder="Enter Contact Number">
-  <textarea id="address" placeholder="Enter Address"></textarea>
-</div>
-
-<!-- Order Section -->
-<label>Select Coffee</label>
-<select id="coffee">
-  <option value="100">Espresso - ₹100</option>
-  <option value="150">Latte - ₹150</option>
-  <option value="200">Cappuccino - ₹200</option>
-</select>
-
-<label>Quantity</label>
-<input type="number" id="qty" value="1">
-
-<label><input type="checkbox" id="extra"> Extra Cream (₹50)</label>
-
-<button onclick="calculate()">Generate Bill</button>
-
-<!-- Summary -->
-<div class="summary">
-  <h3>Bill Summary</h3>
-  <p id="summaryText"></p>
-  <p id="total">Total: ₹0</p>
-</div>
-
-</div>
-
-<script>
-function calculate() {
-  let name = document.getElementById("name").value;
-  let contact = document.getElementById("contact").value;
-  let address = document.getElementById("address").value;
-
-  let coffee = document.getElementById("coffee");
-  let price = parseInt(coffee.value);
-  let coffeeName = coffee.options[coffee.selectedIndex].text;
-
-  let qty = document.getElementById("qty").value;
-  let extra = document.getElementById("extra").checked;
-
-  let total = price * qty;
-
-  if (extra) {
-    total += 50;
-  }
-
-  let summary = `
-  Name: ${name}<br>
-  Contact: ${contact}<br>
-  Address: ${address}<br><br>
-  Item: ${coffeeName}<br>
-  Quantity: ${qty}<br>
-  Extra Cream: ${extra ? "Yes" : "No"}
-  `;
-
-  document.getElementById("summaryText").innerHTML = summary;
-  document.getElementById("total").innerText = "Total: ₹" + total;
+button:hover {
+  background: #7e57c2;
 }
-</script>
-
-</body>
-</html>
