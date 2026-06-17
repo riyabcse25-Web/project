@@ -1,40 +1,79 @@
-
-:root {
-  --brown: #6f4e37;
-  --cream: #fdf6ec
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.bg.brown {
-  background-color: var(--brown);
+/* Body */
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f8cdda, #c6e2ff);
+    color:#333;
+    line-height:1.6;
 }
 
-.bg-light-cream {
-  background-color: var(--cream);
+/* Header */
+header{
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 
-h2 {
-  color: var(--brown);
-  margin-bottom: 20px;
+/* Navigation */
+nav{
+    background-color:#6c5ce7;
+    padding:12px;
+    text-align:center;
 }
 
-.card {
-  border-radius: 10px;
-  transition: 0.3s;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+nav a:hover{
+    color:#ffeaa7;
 }
 
-.nav-link:hover {
-  text-decoration: underline;
+/* Main Content */
+.container{
+    width:80%;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
-.table th, .table td {
-  vertical-align: middle;
+/* Headings */
+h1, h2{
+    color:#6c5ce7;
 }
 
-footer {
-  margin-top: 20px;
+/* Button */
+button{
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* Footer */
+footer{
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
 }
