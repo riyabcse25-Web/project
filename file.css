@@ -1,12 +1,12 @@
 body{
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    text-align: center;
+    background: beige;
     margin: 0;
+    text-align: center;
 }
 
 header, footer{
-    background: #6c63ff;
+    background: brown;
     color: white;
     padding: 15px;
 }
@@ -15,13 +15,13 @@ header, footer{
     background: white;
     margin: 20px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 button{
-    background: #ff6b6b;
+    background: brown;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
