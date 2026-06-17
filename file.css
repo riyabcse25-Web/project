@@ -1,21 +1,21 @@
 body{
     font-family: Arial, sans-serif;
-    background: #f0f8ff;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
     margin: 0;
 }
 
-header{
-    background: #4CAF50;
+header, footer{
+    background: #6c63ff;
     color: white;
-    text-align: center;
     padding: 15px;
 }
 
 .container{
-    padding: 20px;
     background: white;
     margin: 20px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 button{
@@ -23,12 +23,5 @@ button{
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 5px;
-}
-
-footer{
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+    border-radius: 20px;
 }
